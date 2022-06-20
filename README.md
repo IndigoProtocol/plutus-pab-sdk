@@ -13,12 +13,11 @@ running instances can be called via the client API.
 
 #### Activating Contract
 ```typescript
-import {PlutusPabService} from 'plutus-pab-sdk';
+import {PlutusPabService} from '@indigo-labs.io/pab-sdk';
 
 const pabService = new PlutusPabService('https://localhost:9080')
 const contractResponse = await pabService.activateContract(
     'Oracle', // Contract Name
-    {oracleNft: ''}, // Contract Data
     2 // Wallet Id
 );
 
@@ -67,6 +66,6 @@ const tip = chainIndex.tip();
 
 - [x] Product Vision
 - [x] Develop
-- [ ] Production Version
-- [ ] Types & Documentation
-- [ ] Tests
+- [x] Production Version
+- [x] Types & Documentation
+- [-] Tests

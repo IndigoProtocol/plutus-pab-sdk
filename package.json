@@ -1,0 +1,56 @@
+{
+  "name": "@indigo-labs.io/pab-sdk",
+  "version": "0.0.1",
+  "description": "This SDK is intended to allow developers to interact with Plutus Application backend.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.ts"
+  ],
+  "scripts": {
+    "build": "yarn clean && tsc",
+    "clean": "rimraf lib",
+    "lint": "eslint ./src/**/*.ts",
+    "prepublishOnly": "yarn build",
+    "publish": "yarn build && npm publish",
+    "test": "jest -c ./jest.config.js",
+    "docs": "yarn typedoc ./src/index.ts --theme ./node_modules/typedoc-github-wiki-theme/dist",
+    "run-example:testnet": "./node_modules/.bin/ts-node-dev --transpile-only examples/testnet.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndigoProtocol/plutus-pab-sdk.git"
+  },
+  "keywords": [
+    "plutus",
+    "application",
+    "backend",
+    "typescript",
+    "sdk"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/IndigoProtocol/plutus-pab-sdk/issues"
+  },
+  "homepage": "https://github.com/IndigoProtocol/plutus-pab-sdk#readme",
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.0",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typedoc": "^0.22.3",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.4"
+  }
+}
